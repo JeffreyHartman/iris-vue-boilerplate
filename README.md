@@ -83,7 +83,34 @@ Refer to Alkami's [confluence page](https://confluence.alkami.com/sdk/common-sup
 npm install @alkami/iris-vue
 ```
 
-4. Modify `package.json` to move certain libraries to `devDependencies` and configure them as external in `configureWebpack` within `vue.config.js`:
+4. Modify `package.json` to move vue, iris-vue, vue-router, vuex libraries to `devDependencies` and configure them as external in `configureWebpack` within `vue.config.js`. This let's Alkami website provide those libraries instead of bundling them in your compiled .js:
+
+```json
+"dependencies": {
+        "core-js": "^3.8.3"
+    },
+    "devDependencies": {
+        "@alkami/iris-vue": "^1.40.6",
+        "@alkami/iris-vue-helper-json": "^0.1.24",
+        "@typescript-eslint/eslint-plugin": "^5.4.0",
+        "@typescript-eslint/parser": "^5.4.0",
+        "@vue/cli-plugin-babel": "~5.0.0",
+        "@vue/cli-plugin-eslint": "~5.0.0",
+        "@vue/cli-plugin-router": "~5.0.0",
+        "@vue/cli-plugin-typescript": "~5.0.0",
+        "@vue/cli-service": "~5.0.0",
+        "@vue/eslint-config-typescript": "^9.1.0",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-vue": "^8.0.3",
+        "prettier": "^2.4.1",
+        "typescript": "~4.5.5",
+        "vue": "^2.7.14",
+        "vue-router": "^3.6.2",
+        "vue-template-compiler": "^2.6.14"
+
+```
 
 ```javascript
 // vue.config.js
